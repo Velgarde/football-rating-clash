@@ -111,8 +111,6 @@ export const getPlayerRating = async (): Promise<number> => {
     }
 };
 
-
-
 // Export these constants
 export const leagues = [
     { id: 39, name: 'Premier League' },

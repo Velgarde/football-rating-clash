@@ -7,7 +7,7 @@ import { PlayerSearch } from './PlayerSearch';
 import { RatingDisplay } from './RatingDisplay';
 import { Player, Team, Position } from '../types/types';
 import { getRandomTeam, getPlayerRating, getPlayerHistory } from '../services/api';
-import { getRandomPosition } from '../utils/helpers'; // We'll create this function
+import { getRandomPosition } from '../utils/helpers';
 
 interface GameContainerProps {
     player: string;
@@ -43,7 +43,7 @@ export const GameContainer: React.FC<GameContainerProps> = ({
 
     const handleSelectPlayer = async (player: Player) => {
         setLoading(true);
-        const rating = await getPlayerRating(player.id);
+        const rating = await getPlayerRating();  // Remove the player.id argument
         const playerWithRating = { ...player, rating };
         setSelectedPlayer(playerWithRating);
 
